@@ -90,12 +90,6 @@ MIN_WORD_LENGTH=3
 MAX_EXECUTION_TIME=5000
 ```
 
-## 🧪 Running Tests
-
-```bash
-npm test
-```
-
 ## 🛠 Troubleshooting
 
 - **Error: "File not found"**

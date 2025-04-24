@@ -1,4 +1,3 @@
-// src/index.ts
 import * as fs from 'fs';
 import { SimilarityEngine } from './algorithms/SimilarityEngine';
 

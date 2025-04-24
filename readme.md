@@ -1,119 +1,159 @@
-# Document Similarity System
-
-A Node.js/TypeScript system that computes similarity scores (0-1) between text documents using multiple algorithms.
-
-## 🚀 Features
-
-- **Three comparison methods**:
-  - Cosine Similarity (TF-IDF vectors)
-  - Jaccard Similarity (word overlap)
-  - MinHash (approximate similarity)
-- **Clean preprocessing**: Stopword removal, punctuation stripping, case normalization
-- **Performance metrics**: Execution time for each algorithm
-- **CLI interface**: Easy command-line usage
-
-## 📦 Prerequisites
-
-- Node.js v16+
-- npm or yarn
-
-## 🔧 Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/doc-similarity.git
-   cd doc-similarity
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-## 💻 Usage
-
-### Basic CLI Usage
-
-```bash
-npx ts-node src/index.ts <file1> <file2>
-```
-
-### Example
-
-```bash
-npx ts-node src/index.ts sample-docs/doc1.txt sample-docs/doc2.txt
-```
-
-### Sample Output
-
-```
-Document Similarity Results:
-
-Comparing:
-- sample-docs/doc1.txt
-- sample-docs/doc2.txt
-
-Method: cosine  Score: 0.725  Time: 0.45ms  
-Method: jaccard Score: 0.667  Time: 0.32ms  
-Method: minhash Score: 0.500  Time: 0.28ms  
-```
-
-## 📝 Adding Your Documents
-
-- Place your `.txt` files in the `sample-docs/` directory.
-- Run comparisons using the CLI as shown above.
-
-## 📁 Project Structure
-
+### **1. Root Folder Structure**
 ```
 doc-similarity/
-├── src/
-│   ├── algorithms/      # Similarity calculation logic
-│   ├── processors/      # Text preprocessing
-│   └── index.ts         # CLI entry point
-├── sample-docs/         # Example documents
-├── package.json
-└── README.md
+├── doc-similarity-frontend/          # React app
+├── doc-similarity-backend/           # Node.js API
+├── README.md          # Main documentation
+└── .gitignore
 ```
 
-## ⚙️ Advanced Configuration
+---
 
-You can define environment variables in a `.env` file:
+### **2. Root README.md**  
+*(General overview for the entire project)*
 
-```ini
-# Minimum word length to consider
-MIN_WORD_LENGTH=3
+```markdown
+# Document Similarity System
 
-# Maximum execution time (ms)
-MAX_EXECUTION_TIME=5000
-```
+A full-stack solution for comparing text document similarity with:
+- React frontend
+- Node.js backend
+- Multiple comparison algorithms
 
-## 🧪 Running Tests
+## Quick Start
 
+1. **Clone repository**:
 ```bash
-npm test
+git clone https://github.com/yourusername/doc-similarity.git
+cd doc-similarity
 ```
 
-## 🛠 Troubleshooting
+2. **Start both services**:
+```bash
+# Backend
+cd backend && npm install && npm run dev
 
-- **Error: "File not found"**
-  - Verify file paths are correct.
-  - Ensure files have a `.txt` extension.
+# Frontend (in new terminal)
+cd frontend && npm install && npm start
+```
 
-- **Error: TypeScript compilation issues**
-  - Try cleaning and reinstalling:
+## System Architecture
+```mermaid
+graph TD
+  A[User Browser] --> B[React Frontend]
+  B --> C[Node.js API]
+  C --> D[Similarity Algorithms]
+```
 
-    ```bash
-    rm -rf node_modules package-lock.json
-    npm install
-    ```
+## Documentation
+- [Frontend Guide](./frontend/README.md)
+- [Backend Guide](./backend/README.md)
 
-## 📄 License
+## Deployment
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
+## License
 MIT
+```
 
-## 🙋 Support
+---
 
-For issues or questions, please [open an issue](https://github.com/yourusername/doc-similarity/issues).
+### **3. Frontend/README.md**  
+*(Detailed frontend-specific instructions)*
+
+```markdown
+# Document Similarity Frontend
+
+React-based UI for comparing text documents.
+
+## Features
+- Drag-and-drop file upload
+- Real-time similarity scores
+- Performance metrics
+
+## Installation
+```bash
+cd frontend
+npm install
+```
+
+## Configuration
+Create `.env`:
+```ini
+REACT_APP_API_URL=http://localhost:3001
+```
+
+## Available Scripts
+- `npm start`: Local development
+- `npm build`: Production build
+- `npm test`: Run tests
+
+## Deployment
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+```
+
+---
+
+### **4. Backend/README.md**  
+*(Detailed backend-specific instructions)*
+
+```markdown
+# Document Similarity API
+
+Node.js backend for document comparison.
+
+## Features
+- Cosine/Jaccard/Minhash algorithms
+- File processing pipeline
+- Rate limiting
+
+## Installation
+```bash
+cd backend
+npm install
+```
+
+## Configuration
+Create `.env`:
+```ini
+PORT=3001
+MAX_FILE_SIZE=5MB
+```
+
+## Endpoints
+| Method | Endpoint | Description          |
+|--------|----------|----------------------|
+| POST   | /compare | Compare two documents|
+
+## Deployment
+[![Deploy to Railway](https://railway.app/button.svg)](https://railway.app/new)
+```
+
+---
+
+### **Why This Structure Works**
+1. **Root README** gives **global context** and **quick start**
+2. **Sub READMEs** handle **tech-specific details**
+3. **Modular documentation** prevents information overload
+4. **Deployment buttons** encourage quick hosting
+5. **Mermaid diagram** explains architecture visually
+
+---
+
+### **Additional Recommendations**
+1. Add these badges to root README:
+```markdown
+![Node.js CI](https://github.com/yourusername/doc-similarity/actions/workflows/node.js.yml/badge.svg)
+![React](https://img.shields.io/badge/react-%2320232a.svg?logo=react)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?logo=typescript)
+```
+
+2. Include an **example.env** in both directories:
+```bash
+# backend/example.env
+PORT=3001
+MAX_FILE_SIZE=5MB
+
+# frontend/example.env
+REACT_APP_API_URL=http://localhost:3001
+```

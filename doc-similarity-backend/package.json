@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^22.14.1",
+    "axios": "^1.8.4",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "minhash": "^0.0.9",

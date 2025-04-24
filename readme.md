@@ -86,7 +86,6 @@ REACT_APP_API_URL=http://localhost:3001
 ## Available Scripts
 - `npm start`: Local development
 - `npm build`: Production build
-- `npm test`: Run tests
 
 ## Deployment
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)

@@ -36,21 +36,6 @@ cd backend && npm install && npm run dev
 cd frontend && npm install && npm start
 ```
 
-## System Architecture
-```
-graph TD
-  A[User Browser] --> B[React Frontend]
-  B --> C[Node.js API]
-  C --> D[Similarity Algorithms]
-```
-
-## Documentation
-- [Frontend Guide](./frontend/README.md)
-- [Backend Guide](./backend/README.md)
-
-## License
-MIT
-
 ---
 
 ### **3. Frontend/README.md**  

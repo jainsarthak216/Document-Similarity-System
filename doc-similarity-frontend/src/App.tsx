@@ -2,16 +2,21 @@ import { useState } from 'react';
 import { Container, Typography, Box } from '@mui/material';
 import FileUploader from './components/FileUploader';
 import ResultsViewer from './components/ResultsViewer';
+import { compareDocuments } from './services/api';
 
 export default function App() {
   const [results, setResults] = useState<any[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
-  // Simulate API call for testing
-  const handleCompare = () => {
-    setResults([
-      { method: 'cosine', score: 0.75, executionTimeMs: 42 },
-      { method: 'jaccard', score: 0.68, executionTimeMs: 35 }
-    ]);
+  const handleCompare = async (files: File[]) => {
+    try {
+      setError(null); // Clear any previous errors
+      const data = await compareDocuments(files);
+      setResults(data);
+    } catch (err) {
+      console.error('Error comparing documents:', err);
+      setError('Failed to compare documents. Please try again.');
+    }
   };
 
   return (
@@ -21,6 +26,12 @@ export default function App() {
       </Typography>
       
       <FileUploader onCompare={handleCompare} />
+      
+      {error && (
+        <Typography color="error" sx={{ mt: 2 }}>
+          {error}
+        </Typography>
+      )}
       
       {results.length > 0 && (
         <Box sx={{ mt: 4 }}>

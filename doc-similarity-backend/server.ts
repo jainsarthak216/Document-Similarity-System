@@ -1,18 +1,13 @@
-import express, { Request, Response } from 'express';
-import multer from 'multer';
-import cors from 'cors';
-import fs from 'fs';
+import * as express from 'express';
+import * as multer from 'multer';
+import * as cors from 'cors';
+import * as fs from 'fs';
 import { SimilarityEngine } from './src/algorithms/SimilarityEngine';
 
 const app = express();
 const upload = multer({ dest: 'uploads/' });
 
 app.use(cors());
-
-// Extend the Request interface to include the `files` property
-// interface MulterRequest extends Request {
-//   files: Express.Multer.File[];
-// }
 
 app.post('/compare', upload.array('files'), (req: any, res: any) => {
   try {

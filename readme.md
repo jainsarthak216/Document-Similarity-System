@@ -12,7 +12,6 @@ doc-similarity/
 ### **2. Root README.md**  
 *(General overview for the entire project)*
 
-```
 # Document Similarity System
 
 A full-stack solution for comparing text document similarity with:
@@ -23,7 +22,7 @@ A full-stack solution for comparing text document similarity with:
 ## Quick Start
 
 1. **Clone repository**:
-```bash
+```
 git clone https://github.com/yourusername/doc-similarity.git
 cd doc-similarity
 ```
@@ -57,7 +56,6 @@ MIT
 ### **3. Frontend/README.md**  
 *(Detailed frontend-specific instructions)*
 
-```
 # Document Similarity Frontend
 
 React-based UI for comparing text documents.
@@ -68,7 +66,7 @@ React-based UI for comparing text documents.
 - Performance metrics
 
 ## Installation
-```bash
+```
 cd frontend
 npm install
 ```
@@ -91,7 +89,6 @@ REACT_APP_API_URL=http://localhost:3001
 ### **4. Backend/README.md**  
 *(Detailed backend-specific instructions)*
 
-```
 # Document Similarity API
 
 Node.js backend for document comparison.
@@ -102,7 +99,7 @@ Node.js backend for document comparison.
 - Rate limiting
 
 ## Installation
-```bash
+```
 cd backend
 npm install
 ```

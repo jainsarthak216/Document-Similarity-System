@@ -12,7 +12,7 @@ doc-similarity/
 ### **2. Root README.md**  
 *(General overview for the entire project)*
 
-```markdown
+```
 # Document Similarity System
 
 A full-stack solution for comparing text document similarity with:
@@ -29,7 +29,7 @@ cd doc-similarity
 ```
 
 2. **Start both services**:
-```bash
+```
 # Backend
 cd backend && npm install && npm run dev
 
@@ -38,7 +38,7 @@ cd frontend && npm install && npm start
 ```
 
 ## System Architecture
-```mermaid
+```
 graph TD
   A[User Browser] --> B[React Frontend]
   B --> C[Node.js API]
@@ -49,19 +49,15 @@ graph TD
 - [Frontend Guide](./frontend/README.md)
 - [Backend Guide](./backend/README.md)
 
-## Deployment
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
-
 ## License
 MIT
-```
 
 ---
 
 ### **3. Frontend/README.md**  
 *(Detailed frontend-specific instructions)*
 
-```markdown
+```
 # Document Similarity Frontend
 
 React-based UI for comparing text documents.
@@ -79,7 +75,7 @@ npm install
 
 ## Configuration
 Create `.env`:
-```ini
+```
 REACT_APP_API_URL=http://localhost:3001
 ```
 
@@ -89,14 +85,13 @@ REACT_APP_API_URL=http://localhost:3001
 
 ## Deployment
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
-```
 
 ---
 
 ### **4. Backend/README.md**  
 *(Detailed backend-specific instructions)*
 
-```markdown
+```
 # Document Similarity API
 
 Node.js backend for document comparison.
@@ -114,7 +109,7 @@ npm install
 
 ## Configuration
 Create `.env`:
-```ini
+```
 PORT=3001
 MAX_FILE_SIZE=5MB
 ```
@@ -124,35 +119,3 @@ MAX_FILE_SIZE=5MB
 |--------|----------|----------------------|
 | POST   | /compare | Compare two documents|
 
-## Deployment
-[![Deploy to Railway](https://railway.app/button.svg)](https://railway.app/new)
-```
-
----
-
-### **Why This Structure Works**
-1. **Root README** gives **global context** and **quick start**
-2. **Sub READMEs** handle **tech-specific details**
-3. **Modular documentation** prevents information overload
-4. **Deployment buttons** encourage quick hosting
-5. **Mermaid diagram** explains architecture visually
-
----
-
-### **Additional Recommendations**
-1. Add these badges to root README:
-```markdown
-![Node.js CI](https://github.com/yourusername/doc-similarity/actions/workflows/node.js.yml/badge.svg)
-![React](https://img.shields.io/badge/react-%2320232a.svg?logo=react)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?logo=typescript)
-```
-
-2. Include an **example.env** in both directories:
-```bash
-# backend/example.env
-PORT=3001
-MAX_FILE_SIZE=5MB
-
-# frontend/example.env
-REACT_APP_API_URL=http://localhost:3001
-```

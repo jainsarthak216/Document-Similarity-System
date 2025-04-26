@@ -29,7 +29,7 @@ git clone https://github.com/yourusername/doc-similarity.git
 2. **Start both services**:
 ```
 # Backend
-cd backend && npm install && npm run dev
+cd backend && npm install && npm start
 
 # Frontend (in new terminal)
 cd frontend && npm install && npm start

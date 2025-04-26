@@ -24,7 +24,6 @@ A full-stack solution for comparing text document similarity with:
 1. **Clone repository**:
 ```
 git clone https://github.com/yourusername/doc-similarity.git
-cd doc-similarity
 ```
 
 2. **Start both services**:
